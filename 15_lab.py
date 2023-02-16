@@ -1,26 +1,26 @@
 #   This is a game Rock, Paper, Scissors 
 
-import random
+import random     # (module) random
 
-ACTIONS = {0: "Rock", 1: "Paper", 2: "Scissors"}
-VICTORIES = {
+ACTIONS = {0: "Rock", 1: "Paper", 2: "Scissors"} # (constant) ACTIONS: dict[int, str]
+VICTORIES = {         # (constant) VICTORIES: dict[str, str]
     "Rock": "Scissors",  # Rock beats scissors
     "Paper": "Rock",  # Paper beats rock
     "Scissors": "Paper",  # Scissors beats paper
 }
 
 # Function where user chooses Rock, Paper or Scissors
-def get_user_selection(actions):
-    choices = [f"{actions[action]}[{action}]" for action in actions]
-    choices_str = ", ".join(choices)
-    selection = int(input(f"Enter a choice ({choices_str}): "))
-    action = actions[selection]
-    return action
+def get_user_selection(actions):     # (function) def get_user_selection(actions: Any) -> Any
+    choices = [f"{actions[action]}[{action}]" for action in actions]    # (variable) choices: list[str]
+    choices_str = ", ".join(choices)           # (variable) choices_str: str
+    selection = int(input(f"Enter a choice ({choices_str}): "))    # (variable) selection: int
+    action = actions[selection]   # (variable) action: Any
+    return action             # (variable) action: Any
 
 # Function where computer chooses using a random method 
-def get_computer_selection(actions):
-    selection = random.randint(0, len(actions) - 1)
-    action = actions[selection]
+def get_computer_selection(actions):          # (function) def get_computer_selection(actions: Any) -> Any
+    selection = random.randint(0, len(actions) - 1)   # (variable) selection: int
+    action = actions[selection]   #  (variable) action: Any
     return action
 
 # Function that determines the winner
