@@ -1,3 +1,5 @@
+#   This is a game Rock, Paper, Scissors 
+
 import random
 
 ACTIONS = {0: "Rock", 1: "Paper", 2: "Scissors"}
@@ -7,6 +9,7 @@ VICTORIES = {
     "Scissors": "Paper",  # Scissors beats paper
 }
 
+# Function where user chooses Rock, Paper or Scissors
 def get_user_selection(actions):
     choices = [f"{actions[action]}[{action}]" for action in actions]
     choices_str = ", ".join(choices)
@@ -14,11 +17,13 @@ def get_user_selection(actions):
     action = actions[selection]
     return action
 
+# Function where computer chooses using a random method 
 def get_computer_selection(actions):
     selection = random.randint(0, len(actions) - 1)
     action = actions[selection]
     return action
 
+# Function that determines the winner
 def get_determine_winner(victories, user_action, computer_action):
     defeats = victories[user_action]
     if user_action == computer_action:
